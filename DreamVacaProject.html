@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css"
+				href="DreamVacaStyle.css">
+<body>
+
+	<ul id="navbar">
+		<li class="navitem"><a class="active" href="DreamVacaProject.html"> Home </a> </li>
+		<li class="navitem"><a href="DreamVacaP2.html"> Specific Places </a> </li>
+	</ul
+
+</body>
+<div id="map">
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+<script>
+function myMap() {
+ 	
+ 	//all the coordinates
+ 	var dublin = new google.maps.LatLng(53.451452,-6.218262)
+ 	var london = new google.maps.LatLng(51.5007292,-0.1268194)
+ 	var paris = new google.maps.LatLng(48.8588377,2.2775178)
+ 	var rome = new google.maps.LatLng(41.8902102,12.4900369)
+ 	var athens = new google.maps.LatLng(37.990832,23.7032341)
+ 	var giza = new google.maps.LatLng(29.979425,31.1324424)
+	
+	
+	
+	//creates the map
+	var mapCanvas = document.getElementById("googleMap");
+  	var mapOptions = {center: paris, zoom: 4};
+  	var map = new google.maps.Map(mapCanvas,mapOptions);
+
+    //flight path
+	var flightPath = new google.maps.Polyline({
+ 	   path: [dublin, london, paris, rome, athens, giza],
+	   strokeColor: "black",
+ 	   strokeOpacity: 0.8,
+ 	   strokeWeight: 2
+    });
+ 
+	flightPath.setMap(map);
+	
+	//markers
+	var marker = new google.maps.Marker({position: dublin});
+		marker.setMap(map);
+	var marker = new google.maps.Marker({position: london});
+		marker.setMap(map);
+	var marker = new google.maps.Marker({position: rome});
+		marker.setMap(map);
+	var marker = new google.maps.Marker({position: athens});
+		marker.setMap(map);
+	var marker = new google.maps.Marker({position:paris});
+		marker.setMap(map);
+	var marker = new google.maps.Marker({position:giza});
+		marker.setMap(map);
+  			
+
+}
+google.maps.event.addDomListener(window,'load',myMap);
+
+ 
+
+</script>
+</div>
+</head>
+<body>
+<div id="googleMap" style="width:1000px;height:760px;"></div>
+</body>
+
+</html>

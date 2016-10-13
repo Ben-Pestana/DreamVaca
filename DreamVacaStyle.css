@@ -1,0 +1,47 @@
+p {
+	font-size: 10;
+}
+
+#navbar {
+ 	list-style-type: none;
+    margin: 0;
+	padding: 0;
+    overflow: hidden;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navitem a {
+	display: block;
+	color: lawngreen;
+	text-align: center;
+	padding: 16px 20px;
+	text-decoration: none;
+}
+
+.navitem {
+	text-align: center;
+	display: block;
+	float: left;
+}
+
+.navitem a:hover:not(.active) {
+	background-color: blue;
+	color: black;
+}
+
+.navitem a.active {
+	background-color: green;
+	color: black;
+}
+
+#map {
+	padding: 25px 0px;
+	width: 100%;
+}
+
+#main {
+	padding: 50px 0px;
+}
